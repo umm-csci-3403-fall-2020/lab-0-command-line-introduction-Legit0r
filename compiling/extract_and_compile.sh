@@ -1,12 +1,10 @@
 !#/usr/bin/env bash
 
-n=$1
-dir=$2
+#Decompresses and Extracts NthPrime
+tar -zxf NthPrime.tgz
+#Goes into NthPrime Directory
+cd /NthPrime || exit
+#Compiles
+gcc main.c nth_prime.c -o NthPrime
 
-tar zxf NthPrime.tgz --directory "$dir"
-
-cd "$dir"/NthPrime || exit
-
-gcc -o NthPrime main.c nth_prime.c
-
-./NthPrime "$n"
+./NthPrime "$1"
